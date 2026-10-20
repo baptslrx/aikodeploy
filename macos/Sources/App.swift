@@ -27,6 +27,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     let store = DeployStore()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        EditMenu.install(appName: "AikoDeploy")
         let w = NSWindow(contentViewController: NSHostingController(rootView: MainView(store: store, deployer: Deployer(store: store))))
         w.title = "AikoDeploy"
         w.styleMask = [.titled, .closable, .miniaturizable, .resizable]
