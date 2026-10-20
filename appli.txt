@@ -1,0 +1,39 @@
+== Règles « ne pas envoyer »
+  ok   node_modules, .env, .git, .DS_Store ignorés
+  ok   les vrais fichiers du site partent
+  ok   motif de dossier
+== FTP
+  ok   FTP : tester la connexion → Connexion réussie
+  ok   FTP : 1re fois, 4 fichiers à envoyer (["a supprimer.html", "css/style.css", "img/mon logo é.svg", "index.php"])
+   4 fichiers envoyés
+  ok   FTP : site en ligne, accents et espaces compris (["a supprimer.html", "css/style.css", "img/mon logo é.svg", "index.php"])
+  ok   FTP : rien de privé envoyé
+  ok   FTP : juste après, plus rien à envoyer
+  ok   FTP : 1 modifié, 1 nouveau, 1 supprimé détectés
+   2 fichiers envoyés, 1 supprimé
+  ok   FTP : seules les modifications sont parties
+  ok   FTP : 2 fichiers envoyés, pas tout le site
+  ok   FTP : 2 mises en ligne dans l'historique
+   Version du 20 octobre à 13:06 remise en ligne
+  ok   FTP : retour arrière, le serveur est revenu à la 1re version
+   capture site-sombre.png
+   capture site-clair.png
+  ok   mauvais port : message clair (« Le serveur ne répond pas (adresse, port ou pare-feu) »)
+== SFTP
+  ok   SFTP : tester la connexion → Connexion réussie
+  ok   SFTP : 1re fois, 4 fichiers à envoyer (["a supprimer.html", "css/style.css", "img/mon logo é.svg", "index.php"])
+   4 fichiers envoyés
+  ok   SFTP : site en ligne, accents et espaces compris (["a supprimer.html", "css/style.css", "img/mon logo é.svg", "index.php"])
+  ok   SFTP : rien de privé envoyé
+  ok   SFTP : juste après, plus rien à envoyer
+  ok   SFTP : 1 modifié, 1 nouveau, 1 supprimé détectés
+   2 fichiers envoyés, 1 supprimé
+  ok   SFTP : seules les modifications sont parties
+  ok   SFTP : 2 fichiers envoyés, pas tout le site
+  ok   SFTP : 2 mises en ligne dans l'historique
+   Version du 20 octobre à 13:06 remise en ligne
+  ok   SFTP : retour arrière, le serveur est revenu à la 1re version
+   capture accueil-sombre.png
+   capture accueil-clair.png
+
+Tout est OK

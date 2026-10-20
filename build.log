@@ -1,0 +1,4 @@
+→ Compilation universelle (arm64 + x86_64)…
+✓ build/AikoDeploy.app prêt
+Executable=/Users/runner/work/aikodeploy/aikodeploy/macos/build/AikoDeploy.app/Contents/MacOS/AikoDeploy
+designated => identifier "fr.aikographic.aikodeploy"
