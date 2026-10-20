@@ -275,7 +275,7 @@ struct SiteView: View {
                     .foregroundStyle(Theme.accentText(scheme)).font(.system(size: 13, weight: .medium))
             } else {
                 HStack(spacing: 14) {
-                    stat(changes.added.count, "nouveau", "plus.circle.fill", Theme.accentUI)
+                    stat(changes.added.count, "nouveau", "plus.circle.fill", Theme.accentText(scheme))
                     stat(changes.modified.count, "modifié", "pencil.circle.fill", .orange)
                     if site.deleteRemoved { stat(changes.removed.count, "supprimé", "minus.circle.fill", .red) }
                 }
@@ -324,7 +324,7 @@ struct SiteView: View {
             ForEach(Array(history.prefix(20).enumerated()), id: \.element.id) { i, d in
                 HStack {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(d.date.formatted(date: .abbreviated, time: .shortened)).font(.system(size: 12, weight: .medium))
+                        Text(d.date.formatted(.dateTime.locale(Locale(identifier: "fr_FR")).day().month(.abbreviated).year().hour().minute())).font(.system(size: 12, weight: .medium))
                         Text(d.note.isEmpty ? "\(d.uploaded.count) envoyé(s), \(d.deleted.count) supprimé(s)" : d.note)
                             .font(.system(size: 11)).foregroundStyle(.secondary)
                     }
@@ -343,7 +343,7 @@ struct SiteView: View {
 
     private func confirmRollback(_ d: Deployment) {
         let a = NSAlert()
-        a.messageText = "Remettre en ligne la version du \(d.date.formatted(date: .abbreviated, time: .shortened)) ?"
+        a.messageText = "Remettre en ligne la version du \(d.date.formatted(.dateTime.locale(Locale(identifier: "fr_FR")).day().month(.abbreviated).year().hour().minute())) ?"
         a.informativeText = "Les fichiers du serveur reviennent tels qu'ils étaient à ce moment-là. Tes fichiers sur le Mac ne changent pas."
         a.addButton(withTitle: "Revenir")
         a.addButton(withTitle: "Annuler")
